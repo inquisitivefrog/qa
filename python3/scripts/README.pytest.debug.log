@@ -1,0 +1,67 @@
+
+ 
+tim@Timothys-MacBook-Air scripts % pytest test_script.py -v --pdb
+======================================================== test session starts =========================================================
+platform darwin -- Python 3.9.6, pytest-8.4.1, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/tim/Documents/workspace/qa/python3/scripts
+plugins: mock-3.14.1
+collected 1 item                                                                                                                     
+
+test_script.py::test_main FAILED                                                                                               [100%]
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> traceback >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+capsys = <_pytest.capture.CaptureFixture object at 0x103d3df70>
+
+    def test_main(capsys):
+        # Call the main function
+        exit_code = script.main()
+    
+        # Capture the output
+        captured = capsys.readouterr()
+    
+        # Assert the expected output and exit code
+        assert captured.out == "This is my script\n"
+        assert captured.err == ""
+>       assert exit_code == 1
+E       assert 0 == 1
+
+test_script.py:15: AssertionError
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> entering PDB >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PDB post_mortem (IO-capturing turned off) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+> /Users/tim/Documents/workspace/qa/python3/scripts/test_script.py(15)test_main()
+-> assert exit_code == 1
+(Pdb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF    c          d        h         list      q        rv       undisplay
+a      cl         debug    help      ll        quit     s        unt      
+alias  clear      disable  ignore    longlist  r        source   until    
+args   commands   display  interact  n         restart  step     up       
+b      condition  down     j         next      return   tbreak   w        
+break  cont       enable   jump      p         retval   u        whatis   
+bt     continue   exit     l         pp        run      unalias  where    
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+(Pdb) list
+ 10  	    captured = capsys.readouterr()
+ 11  	
+ 12  	    # Assert the expected output and exit code
+ 13  	    assert captured.out == "This is my script\n"
+ 14  	    assert captured.err == ""
+ 15  ->	    assert exit_code == 1
+[EOF]
+(Pdb) retval
+*** Not yet returned!
+(Pdb) n
+
+
+====================================================== short test summary info =======================================================
+FAILED test_script.py::test_main - assert 0 == 1
+========================================================= 1 failed in 26.62s =========================================================
+

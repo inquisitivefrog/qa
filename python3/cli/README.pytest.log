@@ -1,0 +1,58 @@
+
+
+tim@Timothys-MacBook-Air cli % pytest test_cli_args.py -v                                         
+======================================================== test session starts ========================================================
+platform darwin -- Python 3.9.6, pytest-8.4.1, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/tim/Documents/workspace/qa/python3/cli
+plugins: cov-6.2.1, mock-3.14.1
+collected 13 items                                                                                                                  
+
+test_cli_args.py::test_read_args_name_only PASSED                                                                             [  7%]
+test_cli_args.py::test_read_args_name_and_age PASSED                                                                          [ 15%]
+test_cli_args.py::test_read_args_missing_name PASSED                                                                          [ 23%]
+test_cli_args.py::test_read_args_invalid_age PASSED                                                                           [ 30%]
+test_cli_args.py::test_read_args_empty_name PASSED                                                                            [ 38%]
+test_cli_args.py::test_main_no_args PASSED                                                                                    [ 46%]
+test_cli_args.py::test_main_with_name PASSED                                                                                  [ 53%]
+test_cli_args.py::test_main_with_name_and_age PASSED                                                                          [ 61%]
+test_cli_args.py::test_main_invalid_args PASSED                                                                               [ 69%]
+test_cli_args.py::test_main_empty_name PASSED                                                                                 [ 76%]
+test_cli_args.py::test_main_negative_age PASSED                                                                               [ 84%]
+test_cli_args.py::test_main_name_with_spaces PASSED                                                                           [ 92%]
+test_cli_args.py::test_script_execution PASSED                                                                                [100%]
+
+======================================================== 13 passed in 0.05s =========================================================
+tim@Timothys-MacBook-Air cli % pytest test_cli_args.py -v --cov=cli_args --cov-report=term-missing
+======================================================== test session starts ========================================================
+platform darwin -- Python 3.9.6, pytest-8.4.1, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/tim/Documents/workspace/qa/python3/cli
+plugins: cov-6.2.1, mock-3.14.1
+collected 13 items                                                                                                                  
+
+test_cli_args.py::test_read_args_name_only PASSED                                                                             [  7%]
+test_cli_args.py::test_read_args_name_and_age PASSED                                                                          [ 15%]
+test_cli_args.py::test_read_args_missing_name PASSED                                                                          [ 23%]
+test_cli_args.py::test_read_args_invalid_age PASSED                                                                           [ 30%]
+test_cli_args.py::test_read_args_empty_name PASSED                                                                            [ 38%]
+test_cli_args.py::test_main_no_args PASSED                                                                                    [ 46%]
+test_cli_args.py::test_main_with_name PASSED                                                                                  [ 53%]
+test_cli_args.py::test_main_with_name_and_age PASSED                                                                          [ 61%]
+test_cli_args.py::test_main_invalid_args PASSED                                                                               [ 69%]
+test_cli_args.py::test_main_empty_name PASSED                                                                                 [ 76%]
+test_cli_args.py::test_main_negative_age PASSED                                                                               [ 84%]
+test_cli_args.py::test_main_name_with_spaces PASSED                                                                           [ 92%]
+test_cli_args.py::test_script_execution PASSED                                                                                [100%]
+
+========================================================== tests coverage ===========================================================
+__________________________________________ coverage: platform darwin, python 3.9.6-final-0 __________________________________________
+
+Name          Stmts   Miss  Cover   Missing
+-------------------------------------------
+cli_args.py      30      0   100%
+-------------------------------------------
+TOTAL            30      0   100%
+======================================================== 13 passed in 0.12s =========================================================
+tim@Timothys-MacBook-Air cli % 
+
