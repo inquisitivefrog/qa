@@ -2,6 +2,7 @@
 Python3 can be used to test existing code bases developed with other languages or code bases developed with Python.
 
 Common Test Frameworks
+----------------------
 
 Functional
 ----------
@@ -34,7 +35,9 @@ Coverage
 Test Case Management (TCM)
 --------------------
 1. Test Rail
+
 2. qTest
+
 3. Zephyr
 
 Load
@@ -62,3 +65,13 @@ Static Analysis
 2. SonarQube
 
 3. pre-commit
+
+Documentation
+-------------
+1. HTMLHint
+
+2. HTML Tidy
+
+3. html5validator: W3C Markup Validation Service
+
+4. ESLint with HTML
